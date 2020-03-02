@@ -605,6 +605,12 @@ function redraw()
   local o = { 100, 22 }
   
   screen.level(10)
+  
+  -- Start a new sub path, removes unwanted line from last drawn item
+  screen.move(0,0)
+  screen.stroke() 
+  
+  -- Draw some lines
   for i,v in ipairs(things) do
     
     local nr = r * (things[i] + 0.7)
